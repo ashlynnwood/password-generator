@@ -1,3 +1,91 @@
+// Global Variables
+// Array of special characters to be included in password
+var specialCharacters = [
+  '@',
+  '!',
+  '~',
+  '#',
+  '$',
+  '%',
+  '^',
+  '&',
+  '*',
+  '(',
+  ')',
+  '-',
+  '+',
+  '?', 
+  '{',
+  '}',
+  '[',
+  ']',
+  '"',
+  '.'
+];
+
+// Array of numeric characters to be in password
+var NumericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+// Array of lower case characters
+var lowerCaseCharacters = [
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+  'g',
+  'h',
+  'i',
+  'j',
+  'k',
+  'l',
+  'm',
+  'n',
+  'o',
+  'p',
+  'q',
+  'r',
+  's',
+  't',
+  'u',
+  'v',
+  'w',
+  'x',
+  'y',
+  'z',
+];
+
+// Array of upper case characters
+var upperCaseCharacters = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'J',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z',
+];
+
 // Function to prompt user for password options
 function getPasswordOptions() {
   // Variable to store length of password from user input (using prompt)
