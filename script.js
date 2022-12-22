@@ -95,86 +95,86 @@ function getPasswordOptions() {
   // show alert if the length variable from above isn't a number
   if (numberCount != number) {
     window.alert('Error: You need to choose a number.');
-  }
+
   // Conditional statement to check if password length is at least 8 characters long. Prompts end if this evaluates false
   // show alert if the length variable from above is less than 8
-  else if (numberCount < 8) {
+  } else if (numberCount < 8) {
     window.alert('Error: Password must be at least 8 characters.');
-  }
+  
   // Conditional statement to check if password length is less than 128 characters long. Prompts end if this evaluates false
   // show alert if the length variable from above is greater than 128
-  else if (numberCount > 128) {
+  } else if (numberCount > 128) {
     window.alert('Error: Password cannot be longer than 128 characters.');
-  getPasswordOptions();
-  }
 
-  
-  // Variable to store boolean regarding the inclusion of SPECIAL characters
-  var hasSpecialCharacters = confirm(
-    'Click OK to confirm including special characters.'
-  );
+  } else {
+ // Variable to store boolean regarding the inclusion of SPECIAL characters
+var hasSpecialCharacters = confirm('Click OK to confirm including special characters.');
 
-  // Variable to store boolean regarding the inclusion of NUMERIC characters
-  // using pattern from above
-  var hasNumericCharacters = confirm(
-    'Click OK to confirm including numeric characters.'
-  );
-  // Variable to store boolean regarding the inclusion of LOWERCASE characters
-  // using pattern from above
-  var hasLowerCaseCharacters = confirm(
-    'Click OK to confirm including lowercase characters.'
-  );
-  // Variable to store boolean regarding the inclusion of UPPERCASE characters
-  // using pattern from above
-  var hasUpperCaseCharacters = confirm(
-    'Click OK to confirm including uppercase characters.'
-  );
-  // Conditional statement to check if user does not include any types of characters. Password generator ends if all four variables evaluate to false
-  // show alert that tells them they need to have at least one type of character
+// Variable to store boolean regarding the inclusion of NUMERIC characters
+// using pattern from above
+var hasNumericCharacters = confirm('Click OK to confirm including numeric characters.');
+// Variable to store boolean regarding the inclusion of LOWERCASE characters
+// using pattern from above
+var hasLowerCaseCharacters = confirm('Click OK to confirm including lowercase characters.');
+// Variable to store boolean regarding the inclusion of UPPERCASE characters
+// using pattern from above
+var hasUpperCaseCharacters = confirm('Click OK to confirm including uppercase characters.');
+};
 
-  // Object to store user input
-  var passwordOptions = {
-    // your variable for length,
-    length: length,
-    hasSpecialCharacters: hasSpecialCharacters // this will be true or false
-    // same pattern for each type of character
-  };
+// Conditional statement to check if user does not include any types of characters. Password generator ends if all four variables evaluate to false
+// show alert that tells them they need to have at least one type of character
+if (!hasSpecialCharacters && !hasNumericCharacters && !hasLowerCaseCharacters && !hasUpperCaseCharacters) {
+  window.alert("You must choose at least one type of character.");
+} 
 
-  return passwordOptions;
+
+
+// Object to store user input
+var passwordOptions = {
+  // your variable for length,
+  length: numberCount,
+  hasSpecialCharacters: hasSpecialCharacters, // this will be true or false
+  // same pattern for each type of character
+  hasNumericCharacters: hasNumericCharacters,
+  hasLowerCharacters: hasLowerCaseCharacters,
+  hasUpperCharacters: hasUpperCaseCharacters,
+};
+
+return passwordOptions;
 }
 
 // Function to generate password with user input
 function generatePassword() {
-  var options = getPasswordOptions();
-  // Variable to store password as it's being concatenated
-  var result = [];
+var options = getPasswordOptions();
+// Variable to store password as it's being concatenated
+var result = [];
 
-  // Array to store types of characters to include in password
-  var possibleCharacters = [];
+// Array to store types of characters to include in password
+var possibleCharacters = [];
 
-  // Array to contain one of each type of chosen character to ensure each will be used
-  var guaranteedCharacters = [];
+// Array to contain one of each type of chosen character to ensure each will be used
+var guaranteedCharacters = [];
 
-  // Conditional statement that adds array of special characters into array of possible characters based on user input
-  // Push new random special character to guaranteedCharacters
-  if (options.hasSpecialCharacters) {
-    // add specialCharacters to the possibleCharacters array
-    // add a random character from specialCharacters to the guaranteedCharacters array
-  }
+// Conditional statement that adds array of special characters into array of possible characters based on user input
+// Push new random special character to guaranteedCharacters
+if (options.hasSpecialCharacters) {
+  // add specialCharacters to the possibleCharacters array
+  // add a random character from specialCharacters to the guaranteedCharacters array
+}
 
-  // following the pattern from above, do the same thing for NUMERIC characters
+// following the pattern from above, do the same thing for NUMERIC characters
 
-  // following the pattern from above, do the same thing for LOWERCASE characters
+// following the pattern from above, do the same thing for LOWERCASE characters
 
-  // following the pattern from above, do the same thing for UPPERCASE characters
+// following the pattern from above, do the same thing for UPPERCASE characters
 
-  
-  // loop over the options.length, for each iteration - get a random index from the possibleCharacters array and add it to the result variable
 
-  // loop over guaranteedCharacters, set result[i] = guaranteedCharacters[i] - in order to include at least one of each guaranteed character
+// loop over the options.length, for each iteration - get a random index from the possibleCharacters array and add it to the result variable
 
-  // change the result into a string
-  // return that string
+// loop over guaranteedCharacters, set result[i] = guaranteedCharacters[i] - in order to include at least one of each guaranteed character
+
+// change the result into a string
+// return that string
 }
 
 
