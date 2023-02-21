@@ -124,18 +124,19 @@ function getPasswordOptions() {
     } 
 
     // Object to store user input
-let passwordOptions = {
-  length: length,
-  hasSpecialCharacters: hasSpecialCharacters, 
-  hasNumericCharacters: hasNumericCharacters,
-  hasLowerCharacters: hasLowerCaseCharacters,
-  hasUpperCharacters: hasUpperCaseCharacters,
-};
-
-return passwordOptions;
-};
-   };
-
+    let passwordOptions = {
+      length: length,
+      hasSpecialCharacters: hasSpecialCharacters, 
+      hasNumericCharacters: hasNumericCharacters,
+      hasLowerCharacters: hasLowerCaseCharacters,
+      hasUpperCharacters: hasUpperCaseCharacters,
+    };
+    console.log(passwordOptions)
+      return passwordOptions;
+      
+    };
+  };
+  
 
 // Function to generate password with user input
 function generatePassword() {
@@ -166,13 +167,13 @@ function generatePassword() {
     guaranteedCharacters.push(numericCharacters[index2]);
   }
     // Do the same thing for LOWERCASE characters
-   if (options.hasLowerCaseCharacters) {
+   if (options.hasLowerCharacters) {
     possibleCharacters = possibleCharacters.concat(lowerCaseCharacters);
     let index3 = Math.floor(Math.random() * lowerCaseCharacters.length);
     guaranteedCharacters.push(lowerCaseCharacters[index3]);
    }
 // Do the same thing for UPPERCASE characters
- if (options.hasUpperCaseCharacters) {
+ if (options.hasUpperCharacters) {
     possibleCharacters = possibleCharacters.concat(upperCaseCharacters);
     let index4 = Math.floor(Math.random() * upperCaseCharacters.length);
     guaranteedCharacters.push(upperCaseCharacters[index4]); 
