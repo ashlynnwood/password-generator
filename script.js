@@ -97,14 +97,9 @@ function getPasswordOptions() {
     window.alert('Error: You need to choose a number.');
     getPasswordOptions();
   
- // Check if password is at least 8 characters
-  } else if (length < 8) {
-    window.alert('Error: Password must be at least 8 characters.');
-    getPasswordOptions();
-
-//  Check if password length is less than 128 characters
-  } else if (length > 128) {
-    window.alert('Error: Password cannot be longer than 128 characters.');
+ // Check if password is 8-128 characters
+  } else if (length < 8 || length > 128) {
+    window.alert('Error: Password must be between 8 and 128 characters.');
     getPasswordOptions();
 
   } else {
