@@ -13,7 +13,7 @@ To navigate this password generator, a user can click on the "generate password"
 ![password-gen-preview](./03-javascript-homework-demo.png)
 
 ## Try me out!
-
+https://ashlynnwood.github.io/password-generator/
 
 ## Credits
 N/A
