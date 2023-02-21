@@ -151,13 +151,10 @@ function generatePassword() {
   let guaranteedCharacters = [];
   
   // Add array of special characters into array of possible characters based on user input
-  // Push new random special character to guaranteedCharacters
   if (options.hasSpecialCharacters) {
-    // if true, add specialCharacters to the possibleCharacters array
     possibleCharacters = possibleCharacters.concat(specialCharacters);
-    // add a random character from specialCharacters to the guaranteedCharacters array
-    // Get random index from options
     let index = Math.floor(Math.random() * specialCharacters.length);
+    // Push new random special character to guaranteedCharacters
     guaranteedCharacters.push(specialCharacters[index]);
   }
     // Do the same thing for NUMERIC characters
@@ -188,11 +185,10 @@ function generatePassword() {
   // loop over guaranteedChars, set result[i] = guarChars[i] - in order to include at least one of each guaranteed charcater
   for (let i = 0; i < guaranteedCharacters.length; i++) {
     result[i] = guaranteedCharacters[i];
-    // change the result into a string and return it
-  return result.join('');
   } 
+   // change the result into string and return it
+   return result.join('');
 };
-
 
 // Write password to the #password input
 function writePassword() {
