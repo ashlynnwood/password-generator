@@ -89,7 +89,7 @@ let upperCaseCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  // Variable to store length of password from user input 
+  // Store length of password from user input 
   let length = parseInt(prompt("How many characters would you like your password to contain?", "0"), 10);
 
   // Check if password length is a number
@@ -103,16 +103,16 @@ function getPasswordOptions() {
     getPasswordOptions();
 
   } else {
-     // Variable to store boolean of SPECIAL characters
+     // Store SPECIAL characters
       let hasSpecialCharacters = confirm('Click OK to confirm including special characters.');
-     // Variable to store boolean of NUMERIC characters
+     // Store NUMERIC characters
       let hasNumericCharacters = confirm('Click OK to confirm including numeric characters.');
-     // Variable to store boolean of LOWERCASE characters
+     // Store LOWERCASE characters
       let hasLowerCaseCharacters = confirm('Click OK to confirm including lowercase characters.');
-     // Variable to store boolean of UPPERCASE characters
+     // Store UPPERCASE characters
       let hasUpperCaseCharacters = confirm('Click OK to confirm including uppercase characters.');
 
-      // Check if user does not include any types of characters. Password generator ends if all four variables evaluate to false
+      // Check if user doesn't include any types of characters
       if (!hasSpecialCharacters && !hasNumericCharacters && !hasLowerCaseCharacters && !hasUpperCaseCharacters) {
         window.alert("You must choose at least one type of character.");
       getPasswordOptions();
@@ -142,7 +142,7 @@ function generatePassword() {
   // Array to store types of characters to include in password
   let possibleCharacters = [];
   
-  // Array to contain one of each type of chosen character to ensure each will be used
+  // Array to contain one of each type of chosen character
   let guaranteedCharacters = [];
   
   // Add array of special characters into array of possible characters based on user input
@@ -164,20 +164,21 @@ function generatePassword() {
     let index3 = Math.floor(Math.random() * lowerCaseCharacters.length);
     guaranteedCharacters.push(lowerCaseCharacters[index3]);
    }
-// Do the same thing for UPPERCASE characters
+  
+   // Do the same thing for UPPERCASE characters
  if (options.hasUpperCharacters) {
     possibleCharacters = possibleCharacters.concat(upperCaseCharacters);
     let index4 = Math.floor(Math.random() * upperCaseCharacters.length);
     guaranteedCharacters.push(upperCaseCharacters[index4]); 
   }
 
-  // loop over the options.length for each iteration - get a random index from the possibleCharacters array and add it to the result variable
+  // loop over the options - get a random index from the possibleCharacters array and add it to result
   for (let i = 0; i < options.length; i++) {
     let i5 = Math.floor(Math.random() * possibleCharacters.length);
     result.push(possibleCharacters[i5]);
   }
 
-  // loop over guaranteedChars, set result[i] = guarChars[i] - in order to include at least one of each guaranteed charcater
+  // loop over guaranteedChars in order to include at least one of each selected type
   for (let i = 0; i < guaranteedCharacters.length; i++) {
     result[i] = guaranteedCharacters[i];
   } 
