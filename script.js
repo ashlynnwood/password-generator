@@ -188,12 +188,9 @@ function generatePassword() {
   // loop over guaranteedChars, set result[i] = guarChars[i] - in order to include at least one of each guaranteed charcater
   for (let i = 0; i < guaranteedCharacters.length; i++) {
     result[i] = guaranteedCharacters[i];
-    // change the result into a string
-  // return that string
+    // change the result into a string and return it
   return result.join('');
-  }
-
-  
+  } 
 };
 
 
