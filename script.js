@@ -122,15 +122,11 @@ function getPasswordOptions() {
         window.alert("You must choose at least one type of character.");
       getPasswordOptions();
     } 
-   };
 
-
-// Object to store user input
+    // Object to store user input
 let passwordOptions = {
-  // your variable for length,
-  length: passLength,
-  hasSpecialCharacters: hasSpecialCharacters, // this will be true or false
-  // same pattern for each type of character
+  length: length,
+  hasSpecialCharacters: hasSpecialCharacters, 
   hasNumericCharacters: hasNumericCharacters,
   hasLowerCharacters: hasLowerCaseCharacters,
   hasUpperCharacters: hasUpperCaseCharacters,
@@ -138,6 +134,8 @@ let passwordOptions = {
 
 return passwordOptions;
 };
+   };
+
 
 // Function to generate password with user input
 function generatePassword() {
@@ -151,41 +149,50 @@ function generatePassword() {
   // Array to contain one of each type of chosen character to ensure each will be used
   let guaranteedCharacters = [];
   
-  // Conditional statement that adds array of special characters into array of possible characters based on user input
+  // Add array of special characters into array of possible characters based on user input
   // Push new random special character to guaranteedCharacters
   if (options.hasSpecialCharacters) {
-    // if this ^ is true, add specialCharacters to the possibleCharacters array
-    specialCharacters.concat(possibleCharacters);
+    // if true, add specialCharacters to the possibleCharacters array
+    possibleCharacters = possibleCharacters.concat(specialCharacters);
     // add a random character from specialCharacters to the guaranteedCharacters array
     // Get random index from options
     let index = Math.floor(Math.random() * specialCharacters.length);
-    guaranteedCharacters = options[index];
-  
-    // following the pattern from above, do the same thing for NUMERIC characters
-  } else if (options.hasNumericCharacters) {
-    numericCharacters.concat(possibleCharacters);
+    guaranteedCharacters.push(specialCharacters[index]);
+  }
+    // Do the same thing for NUMERIC characters
+  if (options.hasNumericCharacters) {
+    possibleCharacters = possibleCharacters.concat(numericCharacters);
     let index2 = Math.floor(Math.random() * numericCharacters.length);
-    guaranteedCharacters = options[index2];
-
-    // following the pattern from above, do the same thing for LOWERCASE characters
-  } else if (options.hasLowerCaseCharacters) {
-    lowerCaseCharacters.concat(possibleCharacters);
+    guaranteedCharacters.push(numericCharacters[index2]);
+  }
+    // Do the same thing for LOWERCASE characters
+   if (options.hasLowerCaseCharacters) {
+    possibleCharacters = possibleCharacters.concat(lowerCaseCharacters);
     let index3 = Math.floor(Math.random() * lowerCaseCharacters.length);
-    guaranteedCharacters = options[index3];
-
-// following the pattern from above, do the same thing for UPPERCASE characters
-  } else if (options.hasUpperCaseCharacters) {
-    upperCaseCharacters.concat(possibleCharacters);
+    guaranteedCharacters.push(lowerCaseCharacters[index3]);
+   }
+// Do the same thing for UPPERCASE characters
+ if (options.hasUpperCaseCharacters) {
+    possibleCharacters = possibleCharacters.concat(upperCaseCharacters);
     let index4 = Math.floor(Math.random() * upperCaseCharacters.length);
-    guaranteedCharacters = options[index4]; 
+    guaranteedCharacter.push(upperCaseCharacters[index4]); 
   }
 
-  // loop over the options.length for each iteration - get a random index from the possibleCharacters array and add it to tje result variable
+  // loop over the options.length for each iteration - get a random index from the possibleCharacters array and add it to the result variable
+  for (let i = 0; i < options.length; i++) {
+    let i5 = Math.floor(Math.random() * possibleCharacters.length);
+    result.push(possibleCharacters[i5]);
+  }
 
   // loop over guaranteedChars, set result[i] = guarChars[i] - in order to include at least one of each guaranteed charcater
-
-  // change teh result into a string
+  for (let i = 0; i < guaranteedCharacters.length; i++) {
+    result[i] = guaranteedCharacters[i];
+    // change the result into a string
   // return that string
+  return result.join('');
+  }
+
+  
 };
 
 
