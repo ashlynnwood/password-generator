@@ -175,7 +175,7 @@ function generatePassword() {
  if (options.hasUpperCaseCharacters) {
     possibleCharacters = possibleCharacters.concat(upperCaseCharacters);
     let index4 = Math.floor(Math.random() * upperCaseCharacters.length);
-    guaranteedCharacter.push(upperCaseCharacters[index4]); 
+    guaranteedCharacters.push(upperCaseCharacters[index4]); 
   }
 
   // loop over the options.length for each iteration - get a random index from the possibleCharacters array and add it to the result variable
