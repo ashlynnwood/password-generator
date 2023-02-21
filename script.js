@@ -137,7 +137,7 @@ function getPasswordOptions() {
 function generatePassword() {
   let options = getPasswordOptions();
   // Variable to store password as it's being concatenated
-  let result = [];
+  let finalPass = [];
   
   // Array to store types of characters to include in password
   let possibleCharacters = [];
@@ -172,18 +172,18 @@ function generatePassword() {
     guaranteedCharacters.push(upperCaseCharacters[index4]); 
   }
 
-  // loop over the options - get a random index from the possibleCharacters array and add it to result
+  // loop over the options - get a random index from the possibleCharacters array and add it to finalPass
   for (let i = 0; i < options.length; i++) {
     let i5 = Math.floor(Math.random() * possibleCharacters.length);
-    result.push(possibleCharacters[i5]);
+    finalPass.push(possibleCharacters[i5]);
   }
 
   // loop over guaranteedChars in order to include at least one of each selected type
   for (let i = 0; i < guaranteedCharacters.length; i++) {
-    result[i] = guaranteedCharacters[i];
+    finalPass[i] = guaranteedCharacters[i];
   } 
-   // change the result into string and return it
-   return result.join('');
+   // change the finalPass into string and return it
+   return finalPass.join('');
 };
 
 // Write password to the #password input
